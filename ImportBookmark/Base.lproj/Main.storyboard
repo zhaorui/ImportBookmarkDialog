@@ -700,7 +700,7 @@
                                                     <constraint firstAttribute="width" constant="108" id="Wz4-BW-eU6"/>
                                                     <constraint firstAttribute="height" constant="130" id="jju-nV-f56"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="chrome" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="UyT-D3-mAg">
+                                                <buttonCell key="cell" type="square" title="chrome" bezelStyle="shadowlessSquare" image="Chrome" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="UyT-D3-mAg">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -714,7 +714,7 @@
                                                     <constraint firstAttribute="width" constant="108" id="14j-1K-Xoj"/>
                                                     <constraint firstAttribute="height" constant="130" id="jVt-QV-InZ"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Safari" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="GvD-Y1-aCU">
+                                                <buttonCell key="cell" type="square" title="safari" bezelStyle="shadowlessSquare" image="Safari" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="GvD-Y1-aCU">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -728,7 +728,7 @@
                                                     <constraint firstAttribute="height" constant="130" id="FvR-LJ-X0g"/>
                                                     <constraint firstAttribute="width" constant="108" id="kTH-B9-uPc"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Firefox" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kR3-Gx-gs7">
+                                                <buttonCell key="cell" type="square" title="firefox" bezelStyle="shadowlessSquare" image="Firefox" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kR3-Gx-gs7">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -742,7 +742,7 @@
                                                     <constraint firstAttribute="height" constant="130" id="C62-Td-Mza"/>
                                                     <constraint firstAttribute="width" constant="108" id="VyW-Ga-mo1"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="local" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="CKX-dL-kXj">
+                                                <buttonCell key="cell" type="square" title="local" bezelStyle="shadowlessSquare" image="Local" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="CKX-dL-kXj">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -811,9 +811,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Chrome" width="300" height="300"/>
         <image name="Firefox" width="203" height="201"/>
+        <image name="Local" width="120" height="120"/>
         <image name="Safari" width="166" height="166"/>
-        <image name="chrome" width="300" height="300"/>
-        <image name="local" width="120" height="120"/>
     </resources>
 </document>

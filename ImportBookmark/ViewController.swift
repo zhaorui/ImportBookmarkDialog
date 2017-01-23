@@ -16,10 +16,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var local: ImportButton!
     
     //#imageLiteral(resourceName:
-    var chromeBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName: "chrome"))
-    var safariBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName: "Safari"))
-    var firefoxBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName: "Firefox"))
-    var localBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName: "local"))
+    var chromeBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName:"Chrome"), withTitle: "chrome")
+    var safariBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName: "Safari"), withTitle: "safari")
+    var firefoxBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName: "Firefox"), withTitle: "firefox")
+    var localBtn = ImportButton(frame: NSMakeRect(0, 0, 108, 130), withImage: #imageLiteral(resourceName:"Local"), withTitle: "local")
     
     @IBOutlet weak var firstrow: ZRStackView!
     @IBOutlet weak var secondRow: ZRStackView!

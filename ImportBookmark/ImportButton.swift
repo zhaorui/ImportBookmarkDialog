@@ -10,15 +10,26 @@ import Cocoa
 
 class ImportButton: NSButton {
 
-    var mouseInButton = false
+    private var mouseInButton = false
+    private let button_image_rect = NSMakeRect(24, 24, 60, 60)
+    private let button_title_rect = NSMakeRect(0, 100, 108, 20)
     
-    init(frame frameRect: NSRect, withImage image: NSImage) {
+    var btnImage: NSImage?
+    var btnTitle: String?
+    
+    init(frame frameRect: NSRect, withImage image: NSImage, withTitle title: String) {
         super.init(frame: frameRect)
-        self.image = image
+        self.btnImage = image
+        self.btnTitle = title
+        self.title = ""
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.btnImage = image
+        self.image = nil
+        self.btnTitle = title
+        self.title = ""
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -38,18 +49,31 @@ class ImportButton: NSButton {
     }
     
     override func viewDidMoveToWindow() {
-        
-        let dstImage = NSImage(size: NSSize(width: 60, height: 60))
+        let dstImage = NSImage(size: button_image_rect.size)
         dstImage.lockFocus()
-        self.image?.draw(in: NSMakeRect(0, 0, dstImage.size.width, dstImage.size.height))
+        self.btnImage?.draw(in: NSMakeRect(0, 0, dstImage.size.width, dstImage.size.height))
         dstImage.unlockFocus()
-        self.image = dstImage
+        
+        let image_layer = CALayer()
+        image_layer.contents = dstImage
+        image_layer.frame = button_image_rect
+        
+        let title_layer = CATextLayer()
+        title_layer.contentsScale = 2
+        title_layer.string = btnTitle
+        title_layer.alignmentMode = kCAAlignmentCenter
+        title_layer.font = "Helvetica" as CFTypeRef?
+        title_layer.fontSize = 14
+        title_layer.foregroundColor = NSColor.black.cgColor
+        title_layer.frame = button_title_rect
         
         addTrackingRect(self.bounds, owner: self, userData: nil, assumeInside: false)
         self.layer?.cornerRadius = 20
-        self.layer?.borderWidth = 5
+        self.layer?.borderWidth = 1
         self.layer?.borderColor = NSColor.white.cgColor
-        (self.cell as? NSButtonCell)?.showsBorderOnlyWhileMouseInside = true
+        
+        self.layer?.addSublayer(image_layer)
+        self.layer?.addSublayer(title_layer)
     }
     
     override var wantsUpdateLayer: Bool {
