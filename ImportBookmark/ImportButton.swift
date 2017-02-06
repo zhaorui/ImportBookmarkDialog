@@ -22,6 +22,7 @@ class ImportButton: NSButton {
         self.btnImage = image
         self.btnTitle = title
         self.title = ""
+        
     }
     
     required init?(coder: NSCoder) {
@@ -67,13 +68,13 @@ class ImportButton: NSButton {
         title_layer.foregroundColor = NSColor.black.cgColor
         title_layer.frame = button_title_rect
         
-        addTrackingRect(self.bounds, owner: self, userData: nil, assumeInside: false)
+        self.layer?.addSublayer(image_layer)
+        self.layer?.addSublayer(title_layer)
+        
         self.layer?.cornerRadius = 20
         self.layer?.borderWidth = 1
         self.layer?.borderColor = NSColor.white.cgColor
-        
-        self.layer?.addSublayer(image_layer)
-        self.layer?.addSublayer(title_layer)
+        addTrackingRect(self.bounds, owner: self, userData: nil, assumeInside: false)
     }
     
     override var wantsUpdateLayer: Bool {

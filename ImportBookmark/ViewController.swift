@@ -27,11 +27,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //                safari.isHidden = true
-        //                chrome.isHidden = true
-        //                local.isHidden = true
-        //                firefox.isHidden = true
-        
         chromeBtn.setFixedConstraint(width: 108, height: 130)
         safariBtn.setFixedConstraint(width: 108, height: 130)
         firefoxBtn.setFixedConstraint(width: 108, height: 130)
@@ -78,6 +73,8 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func closeWindow(_ sender: NSButton) {
+        self.view.window?.close()
+    }
 }
 

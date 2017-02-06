@@ -13,8 +13,10 @@ class ZRMainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         window?.isMovableByWindowBackground = true
+        window?.isReleasedWhenClosed = false
         window?.isOpaque = false
         window?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0)
+        (NSApp.delegate as! AppDelegate).window_controller = self
     }
 
 }
